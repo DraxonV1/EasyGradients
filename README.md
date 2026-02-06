@@ -1,86 +1,105 @@
-# EasyGradients
+# EasyGradients 🌈
 
-hello friends this is my project easygradients u can use it for color text and many things i dont know complex coding but it works nicely.
+Hello friend! I made this library because I love colors in my terminal. It is very easy to use and even a small child can use it. No complex coding here, just simple things that work like magic!
 
-## how to install
+## How to Install this?
 
-just type this command:
+Just type this simple command in your black screen (terminal):
 
+```bash
 pip install easygradients
+```
 
-## how to use it
+## How to use it? (Examples for you)
 
-first u import the library like this:
+First you must bring the library in your code:
 
+```python
 import easygradients as eg
+```
 
-### gradients
+### 1. Simple Colors
+If you want to make text red or green, just do this:
 
-u can make text gradient like this very easy:
+```python
+# Use hex code like this
+print(eg.color("I am red color!", "#FF0000"))
 
-# use rgb codes
-print(eg.gradient("hello world", [(255, 0, 0), (0, 0, 255)]))
+# Or use simple numbers (RGB)
+print(eg.color("I am green color!", (0, 255, 0)))
+```
 
-# use hex codes
-print(eg.gradient("color text", ["#FF0000", "#00FF00", "#0000FF"]))
+### 2. Beautiful Gradients
+Gradient means many colors mixing together. It looks very nice!
 
-# use 4 colors or more
-print(eg.gradient("many colors wow", ["#00d9f5", "#00f5a0", "#ff00ff", "#ffff00"]))
+```python
+# Mix red and blue
+print(eg.gradient("Mixing colors wow!", ["#FF0000", "#0000FF"]))
 
-# use presets names
-print(eg.gradient("sunset view", "sunset"))
+# You can even use many colors
+print(eg.gradient("So many colors!", ["#FF0000", "#FFFF00", "#00FF00", "#0000FF"]))
+```
 
-### simple colors
+### 3. Using Presets (Shortcuts)
+I have already made some nice color sets for you. You don't need to find hex codes!
 
-if u want one color only:
+```python
+print(eg.gradient("Sunset is looking good", "sunset"))
+print(eg.gradient("Ocean is blue", "ocean"))
+print(eg.gradient("I am hacker in matrix", "matrix"))
+```
 
-print(eg.color("red text", "#FF0000"))
+### 4. Background Colors
+You can even change the back side of the text:
 
-### background colors
+```python
+print(eg.bg_color("Black background here", "#000000"))
+print(eg.bg_gradient("Gradient background is crazy!", ["#FF5F6D", "#FFC371"]))
+```
 
-change backgroud color also:
+### 5. Styling Text
+Make it bold or italic or draw line under it:
 
-print(eg.bg_color("black bg", "#000000"))
-print(eg.bg_gradient("gradient bg", ["#0000FF", "#00FFFF"]))
+```python
+print(eg.style("I am very BOLD", "bold"))
+print(eg.style("I am leaning (italic)", "italic"))
+print(eg.style("Line under me", "underline"))
+```
 
-### styles
+### 6. Special Tricks
+Some more things I added because I was bored:
 
-make text bold or italic:
+```python
+# Rainbow!
+print(eg.rainbow("FULL RAINBOW TEXT!!!"))
 
-print(eg.style("bold text", "bold"))
-print(eg.style("italic text", "italic"))
+# Type like a movie hacker
+eg.typewriter("System is hacking now... please wait...")
 
-styles available: bold, italic, underline, blink, etc.
+# Put text in the middle
+print(eg.center("I am sitting in the middle"))
 
-### special things
+# Put text inside a box
+print(eg.box("Special Message for you", border_col="gold"))
+```
 
-# rainbow text
-print(eg.rainbow("rainbow text wow"))
+### 7. Random (If you are lazy)
+If you can't choose color, let the computer choose:
 
-# type writer effect
-eg.typewriter("typing slowly like hacker...")
+```python
+# Computer will pick anything!
+my_luck = eg.random(show_info=True) 
+print(eg.gradient("I don't know what color this is!", my_luck))
 
-# center text
-print(eg.center("middle of screen"))
+# Ask for random preset only
+preset_luck = eg.random(what_you_want='preset', show_info=True)
+print(eg.gradient("Random preset used!", preset_luck))
+```
 
-# box text
-print(eg.box("text in box"))
+## All my Presets:
+`rainbow`, `sunset`, `ocean`, `morning`, `matrix`, `fire`, `night`, `candy`, `neon`, `cool`, `hot`, `simple`, `grass`, `sky`, `blood`, `gold`.
 
-### random
+## License
+It is MIT license. You can use it anywhere you want, I don't care! Just enjoy the colors.
 
-if u lazy use random:
-
-# random style
-print(eg.random())
-
-# random preset
-print(eg.random('preset'))
-
-## presets list
-
-we have many presets like:
-rainbow, sunset, ocean, fire, matrix, night, neon, cool, hot, simple, gold...
-
-## license
-
-mit license free for use enjoy.
+Made with love by DraxonV1.

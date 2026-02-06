@@ -2,48 +2,48 @@ import random
 import time
 import sys
 
-def hex_to_rgb(code):
-    code = code.lstrip('#')
-    return tuple(int(code[i:i+2], 16) for i in (0, 2, 4))
+def hex_to_rgb(hex_code):
+    hex_code = hex_code.lstrip('#')
+    return tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4))
 
 def rand_col():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-def mixer(c1, c2, fac):
-    r = int(c1[0] + (c2[0] - c1[0]) * fac)
-    g = int(c1[1] + (c2[1] - c1[1]) * fac)
-    b = int(c1[2] + (c2[2] - c1[2]) * fac)
+def mixer(col1, col2, factor):
+    r = int(col1[0] + (col2[0] - col1[0]) * factor)
+    g = int(col1[1] + (col2[1] - col1[1]) * factor)
+    b = int(col1[2] + (col2[2] - col1[2]) * factor)
     return (r, g, b)
 
-def make_steps(cols, num):
-    if num < 2:
-        return [cols[0]] * num
-    if len(cols) < 2:
-        return [cols[0]] * num
+def make_steps(all_cols, total_steps):
+    if total_steps < 2:
+        return [all_cols[0]] * total_steps
+    if len(all_cols) < 2:
+        return [all_cols[0]] * total_steps
     
-    res = []
-    seg = len(cols) - 1
-    step_seg = num // seg
-    rem = num % seg
+    final_list = []
+    sections = len(all_cols) - 1
+    steps_per_sec = total_steps // sections
+    extra_steps = total_steps % sections
     
-    for i in range(seg):
-        start = cols[i]
-        end = cols[i+1]
+    for i in range(sections):
+        start_c = all_cols[i]
+        end_c = all_cols[i+1]
         
-        cur = step_seg + (1 if i < rem else 0)
+        current_steps = steps_per_sec + (1 if i < extra_steps else 0)
         
-        for j in range(cur):
-            f = j / cur
-            res.append(mixer(start, end, f))
+        for j in range(current_steps):
+            f = j / current_steps
+            final_list.append(mixer(start_c, end_c, f))
             
-    if len(res) < num:
-        res.append(cols[-1])
+    if len(final_list) < total_steps:
+        final_list.append(all_cols[-1])
         
-    return res[:num]
+    return final_list[:total_steps]
 
-def slow_print(txt, spd=0.05):
-    for c in txt:
-        sys.stdout.write(c)
+def slow_print(my_text, my_speed=0.05):
+    for ek_char in my_text:
+        sys.stdout.write(ek_char)
         sys.stdout.flush()
-        time.sleep(spd)
+        time.sleep(my_speed)
     print()

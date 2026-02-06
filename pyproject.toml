@@ -1,13 +1,23 @@
 [project]
 name = "easygradients"
 version = "0.1.0"
-description = "A library to easily apply gradients and colors to terminal text."
+description = "A very good library to make your terminal very colorful and nice. easy to use also."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 authors = [
-    { name = "DraxonV1", email = "draxonv1@example.com" }
+    { name = "DraxonV1", email = "drxxn@draxonshop.xyz" }
 ]
+license = { text = "MIT" }
+keywords = ["color", "gradient", "terminal", "nice-text", "easy"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"My GitHub" = "https://github.com/DraxonV1/EasyGradients"
 
 [build-system]
 requires = ["hatchling"]
