@@ -1,40 +1,49 @@
 import random
+import time
+import sys
 
-def hex_to_rgb(hex_code):
-    hex_code = hex_code.lstrip('#')
-    return tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4))
+def hex_to_rgb(code):
+    code = code.lstrip('#')
+    return tuple(int(code[i:i+2], 16) for i in (0, 2, 4))
 
-def random_color():
+def rand_col():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-def interpolate(color1, color2, factor):
-    r = int(color1[0] + (color2[0] - color1[0]) * factor)
-    g = int(color1[1] + (color2[1] - color1[1]) * factor)
-    b = int(color1[2] + (color2[2] - color1[2]) * factor)
+def mixer(c1, c2, fac):
+    r = int(c1[0] + (c2[0] - c1[0]) * fac)
+    g = int(c1[1] + (c2[1] - c1[1]) * fac)
+    b = int(c1[2] + (c2[2] - c1[2]) * fac)
     return (r, g, b)
 
-def generate_gradient_steps(colors, steps):
-    if steps < 2:
-        return [colors[0]] * steps
-    if len(colors) < 2:
-        return [colors[0]] * steps
+def make_steps(cols, num):
+    if num < 2:
+        return [cols[0]] * num
+    if len(cols) < 2:
+        return [cols[0]] * num
     
-    result = []
-    segments = len(colors) - 1
-    steps_per_segment = steps // segments
-    remainder = steps % segments
+    res = []
+    seg = len(cols) - 1
+    step_seg = num // seg
+    rem = num % seg
     
-    for i in range(segments):
-        start_color = colors[i]
-        end_color = colors[i+1]
+    for i in range(seg):
+        start = cols[i]
+        end = cols[i+1]
         
-        current_steps = steps_per_segment + (1 if i < remainder else 0)
+        cur = step_seg + (1 if i < rem else 0)
         
-        for j in range(current_steps):
-            factor = j / current_steps
-            result.append(interpolate(start_color, end_color, factor))
+        for j in range(cur):
+            f = j / cur
+            res.append(mixer(start, end, f))
             
-    if len(result) < steps:
-        result.append(colors[-1])
+    if len(res) < num:
+        res.append(cols[-1])
         
-    return result[:steps]
+    return res[:num]
+
+def slow_print(txt, spd=0.05):
+    for c in txt:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(spd)
+    print()

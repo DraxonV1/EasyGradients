@@ -1,39 +1,50 @@
 import easygradients as eg
 import time
 
-print("Oye sun, check kar raha hu sab kuch chal raha hai ki nahi")
+print("Hey bro, checking everything now...")
 
-print("\n--- Pehle Gradient check karte hai ---")
-print(eg.gradient("Dekh bhai gradient mast lag raha hai na", ["#ff0000", "#00ff00"]))
+print("\n--- Testing Gradient ---")
+print(eg.gradient("Look bro this gradient is looking very nice", ["#ff0000", "#00ff00"]))
 
-print("\n--- Ab color check ---")
-print(eg.color("Ye laal hai bhai", "#ff0000"))
+print("\n--- Testing Color ---")
+print(eg.color("This is red color bro", "#ff0000"))
 
-print("\n--- Background bhi dekh le ---")
-print(eg.bg_color("Iske piche kala hai", "#000000"))
-print(eg.bg_gradient("Piche gradient hai boss", ["#0000ff", "#ffffff"]))
+print("\n--- Testing Background ---")
+print(eg.bg_color("Black background here", "#000000"))
+print(eg.bg_gradient("Gradient background boss", ["#0000ff", "#ffffff"]))
 
-print("\n--- Styling wyling ---")
-print(eg.style("Mota text hai ye", "bold"))
-print(eg.style("Teda text", "italic"))
-print(eg.style("Line mar diya niche", "underline"))
-print(eg.style("Kaat diya isko", "strikethrough"))
+print("\n--- Testing Styles ---")
+print(eg.style("This is bold text", "bold"))
+print(eg.style("This is italic text", "italic"))
+print(eg.style("Line under text", "underline"))
+print(eg.style("Cut the text", "strikethrough"))
 
-print("\n--- Rainbow wali feeling ---")
-print(eg.rainbow("Rang barse bhige chunar wali"))
+print("\n--- Testing Rainbow ---")
+print(eg.rainbow("Full rainbow color text here"))
 
-print("\n--- Presets ka scene ---")
-presets = ["sunset", "ocean", "fire", "matrix"]
+print("\n--- Testing New Features ---")
+print("Box check:")
+print(eg.box("Hello Box"))
+print(eg.box("Colored Box", "#00ff00"))
+
+print("Center check:")
+print(eg.center("I am in center"))
+
+print("Typewriter check:")
+eg.typewriter("I am typing very slow bro like hacker movie...")
+
+print("\n--- Testing Presets ---")
+presets = ["sunset", "ocean", "fire", "matrix", "gold", "blood"]
 for p in presets:
-    print(f"Ye hai {p} wala style:")
-    print(eg.gradient(f"Kaisa laga {p}?", p))
+    print(f"This is {p} style:")
+    print(eg.gradient(f"Do you like {p}?", p))
 
-print("\n--- Random kuch bhi ---")
-print("Ruk randomly kuch generate karta hu...")
-kuch_bhi = eg.random()
-if isinstance(kuch_bhi, list):
-    print(eg.gradient("Ye le random gradient", kuch_bhi))
+print("\n--- Testing Random ---")
+print("Wait, making something random...")
+something = eg.random()
+if isinstance(something, list):
+    print(eg.gradient("Got a random gradient", something))
 else:
-    print(eg.color("Ye le random color", kuch_bhi))
+    print(eg.color("Got a random color", something))
 
-print(eg.gradient("Bas ho gaya bhai, sab set hai! Maja aa gaya.", "neon"))
+print(eg.gradient("Everything is working fine bro! Done.", "neon"))

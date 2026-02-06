@@ -1,124 +1,86 @@
 # EasyGradients
 
-A Python library to easily apply RGB gradients, colors, and styles to terminal text.
+hello friends this is my project easygradients u can use it for color text and many things i dont know complex coding but it works nicely.
 
-## Installation
+## how to install
 
-```bash
+just type this command:
+
 pip install easygradients
-```
 
-## Usage
+## how to use it
 
-Import the library:
+first u import the library like this:
 
-```python
 import easygradients as eg
-```
 
-### Gradients
+### gradients
 
-Apply a gradient to text using RGB tuples, hex codes, or preset names.
+u can make text gradient like this very easy:
 
-```python
-# Using RGB tuples
-my_gradient = [(255, 0, 0), (0, 0, 255)]
-print(eg.gradient("Hello World", my_gradient))
+# use rgb codes
+print(eg.gradient("hello world", [(255, 0, 0), (0, 0, 255)]))
 
-# Using Hex codes
-hex_gradient = ["#FF0000", "#00FF00", "#0000FF"]
-print(eg.gradient("Colorful Text", hex_gradient))
+# use hex codes
+print(eg.gradient("color text", ["#FF0000", "#00FF00", "#0000FF"]))
 
-# Using multiple Hex codes (e.g., 4 colors)
-multi_hex = ["#00d9f5", "#00f5a0", "#ff00ff", "#ffff00"]
-print(eg.gradient("Multi-stop Gradient", multi_hex))
+# use 4 colors or more
+print(eg.gradient("many colors wow", ["#00d9f5", "#00f5a0", "#ff00ff", "#ffff00"]))
 
-# Using Presets
-print(eg.gradient("Sunset Text", "sunset"))
-print(eg.gradient("Ocean Vibes", "ocean"))
-```
+# use presets names
+print(eg.gradient("sunset view", "sunset"))
 
-### Solid Colors
+### simple colors
 
-Apply a single solid color.
+if u want one color only:
 
-```python
-# Using RGB tuple
-print(eg.color("Red Text", (255, 0, 0)))
+print(eg.color("red text", "#FF0000"))
 
-# Using Hex code
-print(eg.color("Green Text", "#00FF00"))
-```
+### background colors
 
-### Backgrounds
+change backgroud color also:
 
-Apply colors or gradients to the background.
+print(eg.bg_color("black bg", "#000000"))
+print(eg.bg_gradient("gradient bg", ["#0000FF", "#00FFFF"]))
 
-```python
-# Solid background
-print(eg.bg_color("Black Text on White BG", "#FFFFFF"))
+### styles
 
-# Gradient background
-print(eg.bg_gradient("Cool Background", ["#0000FF", "#00FFFF"]))
-```
+make text bold or italic:
 
-### Text Styling
+print(eg.style("bold text", "bold"))
+print(eg.style("italic text", "italic"))
 
-Apply styles like bold, italic, underline, etc.
+styles available: bold, italic, underline, blink, etc.
 
-```python
-print(eg.style("Bold Text", "bold"))
-print(eg.style("Italic Text", "italic"))
-print(eg.style("Underlined", "underline"))
-print(eg.style("Multiple Styles", ["bold", "underline", "blink"]))
-```
+### special things
 
-Available styles: `bold`, `dim`, `italic`, `underline`, `blink`, `reverse`, `hidden`, `strikethrough`.
+# rainbow text
+print(eg.rainbow("rainbow text wow"))
 
-### Special Effects
+# type writer effect
+eg.typewriter("typing slowly like hacker...")
 
-```python
-# Rainbow text
-print(eg.rainbow("Rainbow Text"))
-```
+# center text
+print(eg.center("middle of screen"))
 
-### Random Generation
+# box text
+print(eg.box("text in box"))
 
-Generate random colors, gradients, or styling.
+### random
 
-```python
-# Generate a random color or gradient
-style = eg.random()
-if isinstance(style, list):
-    print(eg.gradient("Random Style", style))
-else:
-    print(eg.color("Random Style", style))
+if u lazy use random:
 
-# Force random color
-rand_color = eg.random('color')
-print(eg.color("Random Color", rand_color))
+# random style
+print(eg.random())
 
-# Force random gradient
-rand_grad = eg.random('gradient')
-print(eg.gradient("Random Gradient", rand_grad))
+# random preset
+print(eg.random('preset'))
 
-# Random Preset
-preset_name = eg.random('preset')
-print(eg.gradient("Random Preset", preset_name))
-```
+## presets list
 
-## Available Presets
+we have many presets like:
+rainbow, sunset, ocean, fire, matrix, night, neon, cool, hot, simple, gold...
 
-- rainbow
-- sunset
-- ocean
-- morning
-- matrix
-- fire
-- night
-- candy
-- neon
+## license
 
-## License
-
-MIT
+mit license free for use enjoy.
