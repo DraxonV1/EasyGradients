@@ -28,6 +28,10 @@ print(eg.gradient("Hello World", my_gradient))
 # Using Hex codes
 hex_gradient = ["#FF0000", "#00FF00", "#0000FF"]
 print(eg.gradient("Colorful Text", hex_gradient))
+
+# Using multiple Hex codes (e.g., 4 colors)
+multi_hex = ["#00d9f5", "#00f5a0", "#ff00ff", "#ffff00"]
+print(eg.gradient("Multi-stop Gradient", multi_hex))
 ```
 
 ### Solid Colors
