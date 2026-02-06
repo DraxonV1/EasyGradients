@@ -1,6 +1,9 @@
 # EasyGradients 🌈
 
-Hello friend! I made this library because I love colors in my terminal. It is very easy to use and even a small child can use it. No complex coding here, just simple things that work like magic!
+![Icon](icon.png)
+
+Hello friend! I made this library because I love colors in my terminal.
+ It is very easy to use and even a small child can use it. No complex coding here, just simple things that work like magic!
 
 ## How to Install this?
 
