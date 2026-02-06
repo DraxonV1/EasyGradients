@@ -1,6 +1,6 @@
 [project]
 name = "easygradients"
-version = "0.1.0"
+version = "0.1.1"
 description = "A very good library to make your terminal very colorful and nice. easy to use also."
 readme = "README.md"
 requires-python = ">=3.12"
