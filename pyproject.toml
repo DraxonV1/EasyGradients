@@ -1,0 +1,14 @@
+[project]
+name = "easygradients"
+version = "0.1.0"
+description = "A library to easily apply gradients and colors to terminal text."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+authors = [
+    { name = "DraxonV1", email = "draxonv1@example.com" }
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
